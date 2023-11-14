@@ -9,14 +9,9 @@ from datetime import datetime, timedelta
 from email.message import EmailMessage
 
 
-
-
-
-    
-
 # Get the right workbook and worksheet
-wb = openpyxl.load_workbook('customers.xlsx')
-sheet = wb['Transfer']
+wb = openpyxl.load_workbook("customers.xlsx")
+sheet = wb["Transfer"]
 
 # Get the right row and column with data entry
 last_row = sheet.max_row
@@ -25,17 +20,24 @@ last_col = sheet.max_column
 # Convert the data entry to a proper dictionary, each key is a job number
 # corresponsing value is the job details.
 jobs = {}
-for row in sheet.iter_rows(min_row=2, max_col=last_col, max_row=last_row, values_only=True):
-    job_details = {sheet.cell(row=1, column=j).value: value for j, value in enumerate(row, start=1)}
+for row in sheet.iter_rows(
+    min_row=2, max_col=last_col, max_row=last_row, values_only=True
+):
+    job_details = {
+        sheet.cell(row=1, column=j).value: value for j, value in enumerate(row, start=1)
+    }
     job_num = row[0]
     jobs[job_num] = job_details
 
 # Filter the jobs that the invoice hasn't been send to the corresponding customer
-jobs_to_send_invoices = {job_num: job_details for (job_num, job_details) in jobs.items() if job_details['Invoice Date'] == None}
+jobs_to_send_invoices = {
+    job_num: job_details
+    for (job_num, job_details) in jobs.items()
+    if job_details["Invoice Date"] == None
+}
 
 for k, v in jobs_to_send_invoices.items():
     print(f"{k}: {v}")
-
 
 
 for job_num, job_details in jobs_to_send_invoices.items():
@@ -52,7 +54,7 @@ for job_num, job_details in jobs_to_send_invoices.items():
         sub_total = float(removal_fee_total + surcharge)
         gst = float(sub_total * 0.1)
         total = float(sub_total + gst)
-        
+
         content = {
             "billing_info": billing_info,
             "job_no": job_no,
@@ -78,4 +80,6 @@ for job_num, job_details in jobs_to_send_invoices.items():
 
         config = pdfkit.configuration(wkhtmltopdf="/usr/local/bin/wkhtmltopdf")
         output_pdf = f"{job_no}.pdf"
-        pdfkit.from_string(output_text, output_pdf, configuration=config, css="invoice.css")
+        pdfkit.from_string(
+            output_text, output_pdf, configuration=config, css="invoice.css"
+        )
