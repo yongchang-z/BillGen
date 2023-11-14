@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif">
+</head>
+<body>
+    <table class="company">
+        <tbody>
+            <tr>
+                <td rowspan="4" id="logo">SUPERBEAR</td>
+                <td class="right">Superbear Removal Pty Ltd.</td>
+            </tr>
+            <tr>
+                <td class="right">ABN 22 333 333 333</td>
+            </tr>
+            <tr>
+                <td class="right">Address line 1,</td>
+            </tr>
+            <tr>
+                <td class="right">Address line 2</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table class="invoice">
+        <tbody>
+            <tr>
+                <td rowspan="2" id="tax_invoice">Tax Invoice</td>
+                <td class="right">Invoice Number:&nbsp</td>
+                <td class="right">{{job_no}}</td>
+            </tr>
+            <tr>
+                <td class="right">Date of Issue:&nbsp</td>
+                <td class="right">{{invoice_date}}</td>
+            </tr>
+            <tr>
+                <td>{{billing_info}}</td>
+            </tr>
+            <tr>
+                <td>{{billing_info_optional}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table class="charge">
+        <thead>
+            <tr>
+                <th class="left">Description</th>
+                <th class="right">Price</th>
+                <th class="center">QTY</th>
+                <th class="right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Removal Fee</td>
+                <td class="right">{{rate}}</td>
+                <td class="center">{{hours}}</td>
+                <td class="right">{{removal_fee_total}}</td>
+            </tr>
+            <tr>
+                <td>Surcharge</td>
+                <td class="right">{{surcharge}}</td>
+                <td class="center">1</td>
+                <td class="right">{{surcharge}}</td>
+            </tr>
+            <tr>
+                <td>{{stair_fee}}</td>
+                <td class="right">{{stair_fee}}</td>
+                <td class="center">{{stair_levels}}</td>
+                <td class="right">{{stair_fee_total}}</td>
+            </tr>
+            <tr>
+                <td>{{heavy_item_fee}}</td>
+                <td class="right">{{heavy_item_fee}}</td>
+                <td class="center">{{heavy_item_number}}</td>
+                <td class="right">{{heavy_item_total}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="blank_row"><td colspan="4"></td></tr>
+            <tr>
+                <td colspan="3" class="right">SUB TOTAL</td>
+                <td class="right">{{sub_total}}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="right">GST</td>
+                <td class="right">{{gst}}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="right">TOTAL INCLUSIVE OF GST</td>
+                <td class="right">{{total}}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="essential">
+        <table id="due">
+            <tr><td>Due Date</td></tr>
+            <tr><td>{{due_date}}</td></tr>
+        </table>
+        <table class="account">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="right_border">Total Amount</th>
+                    <th colspan="2">Account Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="center right_border"><strong>{{total}}</strong></td>
+                    <td class="left itablic">Account Name</td>
+                    <td class="left"><strong>Superbear Removal Pty Ltd</strong></td>
+                </tr>
+                <tr>
+                    <td class="left itablic">BSB</td>
+                    <td class="left"><strong>123-456</strong></td>
+                </tr>
+                <tr>
+                    <td class="left itablic">Account Number</td>
+                    <td class="left"><strong>1234-5678</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+            <p>Phone: &nbsp 0404 333 333 | Email: &nbsp superbearremoval@gmail.com</p>
+            <p class="copyright">Copyright &#64; Superbear Removal Pty Ltd.</p>
+    </footer>
+      
+</body>
+</html>

@@ -1,0 +1,160 @@
+
+body {
+    font-size: 20px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+table.company td {
+    font-size: 16px;
+    padding: 5px;
+}
+
+#logo {
+    font-family: "Young Serif", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 80px;
+    padding: 0px;
+    color: rgb(230, 100, 35);
+}
+
+#tax_invoice {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 40px;
+    color: rgb(230, 100, 35);
+}
+
+table.invoice tbody tr td:nth-child(1) {
+    width: 60%;
+  }
+
+table.invoice tbody tr td:nth-child(2) {
+    width: 25%;
+  }
+
+table.invoice tbody tr td:nth-child(3) {
+    width: 15%;
+  }
+
+table.invoice tbody tr td {
+    padding: 5px;
+  }
+
+table.charge th {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 5px solid rgb(230, 100, 35);
+}
+
+table.charge td {
+    padding: 2px;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.blank_row
+{
+    height: 20px;
+    background-color: #ffffff;
+}
+
+#due {
+    float: left;
+    width: 40%;
+}
+
+#due tr:nth-child(1) td{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 55px;
+    color: rgb(230, 100, 35);
+}
+
+#due tr:nth-child(2) td{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 5px;
+    color: rgb(230, 100, 35);
+}
+
+table.account{
+    float: right;
+    width: 60%;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: rgba(230, 100, 35, 0.4);
+}
+
+table.account th {
+    font-size: 18px;
+    padding: 18px;
+    font-weight: 400;
+    background-color: rgba(230, 100, 35, 0.4);
+}
+
+table.account th:nth-child(1) {
+    border-top-left-radius: 15px;
+}
+
+table.account th:nth-child(2) {
+    border-top-right-radius: 15px;
+}
+
+table.account colgroup col:nth-child(1) {
+    width: 35%;
+}
+
+table.account colgroup col:nth-child(2) {
+    width: 15%;
+}
+
+table.account colgroup col:nth-child(3) {
+    width: 50%;
+}
+
+table.account td {
+    padding: 8px;
+    font-weight: 400;
+}
+
+.itablic {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.right_border {
+    border-right: 1px solid #ffffff;
+}
+
+.essential::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+footer {
+    text-align: right;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+}
+
+.copyright {
+    font-size: 12px;
+    font-style: italic;
+}
