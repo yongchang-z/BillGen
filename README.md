@@ -1,0 +1,1 @@
+BillGen is a Python command line app, leveraging standard libraries and third-party modules to automate Excel-based invoice generation and seamless email delivery to customers, optimizing workflows, and elevating communication efficiency.
